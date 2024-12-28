@@ -8,6 +8,7 @@ form.addEventListener("submit", function(){
     let email=form.email.value;
     let password=form.password.value;
     let loginObj={email,password}
+    let loginObj1={email,password}
     // let user=[loginObj];
     // localStorage.setItem("loginData" , JSON.stringify(loginObj));
 
@@ -18,7 +19,8 @@ form.addEventListener("submit", function(){
     }
     else if(email=="user@empher.com" && password=="user@123"){//checking for user credentials
         alert( "Redirecting to Book Page.");
-        localStorage.setItem("loginData" , JSON.stringify(loginObj));
+        let loginObj1={email,password}
+        localStorage.setItem("loginData" , JSON.stringify(loginObj1[0]));
         window.location.href="books.html"
     }
     else{

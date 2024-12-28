@@ -80,6 +80,12 @@ let card=document.createElement("div");
    verifybutton.addEventListener("click", async function(){
     verifyfn(el,i);
    })
+   let availablebutton=document.createElement("button");
+   availablebutton.textContent="Available Book";
+   availablebutton.setAttribute("class" ,"button")
+   availablebutton.addEventListener("click", async function(){
+    availablefn(el,i);
+   })
    let deletebutton=document.createElement("button");
    deletebutton.textContent="Delete Book";
    deletebutton.setAttribute("class" ,"button1")
@@ -102,7 +108,7 @@ isAvailable.textContent=`Available: Yes`;
     else{
         isVerified.textContent=`Verified: No`
     }
-    card.append(title,author,category,isAvailable,isVerified,verifybutton,deletebutton)
+    card.append(title,author,category,isAvailable,isVerified,verifybutton,availablebutton, deletebutton)
     cont.append(card)
     getBook()
 })
@@ -154,6 +160,31 @@ getBook();
     }
     catch{
         console.log("not able to delet book")
+    }
+}
+}
+
+async function  availablefn(el,i){
+    let bookId=el.id;
+    let updatebook={...el, isAvailable:!el.isAvailable}
+    let newurl="https://scientific-young-ankylosaurus.glitch.me/books"
+    if(confirm("Are you sure to mark it available?")){
+
+    
+    try{ 
+        await fetch(`${newurl}/${bookId}`, {
+
+        method:"PATCH",
+        headers:{
+            "content-type":"application/json"
+        },
+        body:JSON.stringify(updatebook)
+    })
+    alert("Book marked available Successfully");
+    getBook();
+    }
+    catch{
+        console.log("not able to update")
     }
 }
 }
