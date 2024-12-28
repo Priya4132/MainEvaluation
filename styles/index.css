@@ -1,0 +1,58 @@
+/* navbar styling */
+
+#nav{
+    background-color:blueviolet;
+    height:30px;
+    align-items: center;
+    text-align: center;
+}
+
+#nav-links{
+    width:80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    padding:5px;
+}
+#nav-links a{
+    color:white;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+
+/* login form styling */
+
+#login-form{
+    margin:10px auto;
+    background-color: rgb(252, 235, 238);
+   width: 50%;
+}
+#login-form h3{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    padding:10px;
+    /* padding:20px; */
+}
+#form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#form input{
+    width:30%;
+}
+#form #submit{
+    width:fit-content;
+    background-color: blueviolet;
+    color: white;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;;
+    margin-top:10px;
+    /* align-self: center; */
+}
