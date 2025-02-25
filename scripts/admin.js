@@ -1,10 +1,10 @@
 
 
-let loginObj=JSON.parse(localStorage.getItem("LoginData"));
-// console.log(usernew[0]);
-// checking admin credentials
-//  && loginObj[0].email != "admin@empher.com"
-// if (loginObj=""){
+// let loginObj=JSON.parse(localStorage.getItem("LoginData"));
+// console.log(loginObj);
+// // checking admin credentials
+//  if(loginObj==null && loginObj.email != "admin@empher.com")
+// {
 //     alert("Admin Not Logged In");
 //     window.location.href="index.html";
 // }
@@ -81,7 +81,8 @@ let card=document.createElement("div");
     verifyfn(el,i);
    })
    let availablebutton=document.createElement("button");
-   availablebutton.textContent="Available Book";
+  
+   
    availablebutton.setAttribute("class" ,"button")
    availablebutton.addEventListener("click", async function(){
     availablefn(el,i);
@@ -95,9 +96,11 @@ let card=document.createElement("div");
     let isAvailable=document.createElement("h4");
     if(el.isAvailable==true){
 isAvailable.textContent=`Available: Yes`;
+availablebutton.textContent=`Mark it Unavailable`;
     }
     else{
         isAvailable.textContent=`Available: No`
+        availablebutton.textContent="Available Book";
     }
 
     let isVerified=document.createElement("h4");

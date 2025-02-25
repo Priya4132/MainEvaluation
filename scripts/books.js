@@ -48,6 +48,7 @@ let card=document.createElement("div");
    author.textContent=`Author: ${el.author}`
    let category=document.createElement("h4");
    category.textContent=`Category: ${el.category}`
+  
 //    let verifybutton=document.createElement("button");
 //    verifybutton.textContent="Verify Book";
 //    verifybutton.setAttribute("class" ,"button")
@@ -71,9 +72,10 @@ isAvailable.textContent=`Available: Yes`;
     let isVerified=document.createElement("h4");
     if(el.isVerified==true){
         isVerified.textContent=`Verified: Yes`;
-        verifybutton.classList.add("verified")
+    //     verifybutton.classList.add("verified")
+    // }
     }
-    else{
+    else {
         isVerified.textContent=`Verified: No`
     }
     card.append(title,author,category)
